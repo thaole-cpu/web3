@@ -123,7 +123,7 @@ def mini_test():
         mbti_type = calculate_mbti(answers)
         session['mbti_type'] = mbti_type  # Lưu MBTI type vào session
         print(f"MBTI type trong /mini_test: {mbti_type}")
-        return redirect(url_for('submit'))  # Không cần truyền mbti_type qua URL
+        return redirect(url_for('submit')) 
     
     return render_template('mini_test.html', questions=questions)
 @app.route('/submit', methods=['GET', 'POST'])
