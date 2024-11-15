@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ Thống Phản Hồi và Đánh Giá</title>
+</head>
+<body>
+    <h1>Phản Hồi và Đánh Giá</h1>
+    <form action="/submit_feedback" method="post">
+        <label for="name">Tên của bạn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="feedback">Phản hồi của bạn:</label>
+        <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+        <label for="rating">Đánh giá (1 - 5):</label>
+        <select id="rating" name="rating" required>
+            <option value="1">1 - Tệ</option>
+            <option value="2">2 - Bình thường</option>
+            <option value="3">3 - Khá</option>
+            <option value="4">4 - Tốt</option>
+            <option value="5">5 - Xuất sắc</option>
+        </select>
+
+        <button type="submit">Gửi phản hồi</button>
+    </form>
+</body>
+</html>

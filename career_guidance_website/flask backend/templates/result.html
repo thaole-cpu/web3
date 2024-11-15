@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết Quả Định Hướng Nghề Nghiệp</title>
+</head>
+<body>
+    <h1>Kết Quả Định Hướng Nghề Nghiệp</h1>
+
+    <!-- Kiểm tra nếu mbti_type được truyền vào -->
+    <p>Loại tính cách của bạn: {{ mbti_type if mbti_type else "Không xác định" }}</p>
+    
+    <h2>Ngành nghề phù hợp:</h2>
+    <ul>
+        {% if careers %}
+            {% for career in careers %}
+                <li>{{ career }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Không tìm thấy ngành nghề phù hợp.</li>
+        {% endif %}
+    </ul>
+
+    <h2>Ngành học phù hợp:</h2>
+    <ul>
+        {% if majors %}
+            {% for major in majors %}
+                <li>{{ major }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Không tìm thấy ngành học phù hợp.</li>
+        {% endif %}
+    </ul>
+
+    <h2>Trường đại học phù hợp:</h2>
+    <ul>
+        {% if schools %}
+            {% for school in schools %}
+                <li>{{ school.name }}{% if school.tuition %} - Học phí: {{ school.tuition }}{% endif %}{% if school.region %} - Khu vực: {{ school.region }}{% endif %}</li>
+            {% endfor %}
+        {% else %}
+            <li>Không tìm thấy trường đại học phù hợp.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Cá Nhân</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Nhập Thông Tin Cá Nhân</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+        <!-- Hiển thị nhóm tính cách MBTI -->
+        <p>MBTI Type của bạn: <strong>{{ mbti_type }}</strong></p>
+        
+        <!-- Ẩn nhóm tính cách MBTI để gửi sang Flask -->
+        <input type="hidden" name="mbti_type" value="{{ mbti_type }}">
+        
+        <!-- Nhập thông tin cá nhân -->
+        <label for="name">Tên:</label>
+        <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+
+        <label for="age">Tuổi:</label>
+        <input type="number" id="age" name="age" min="1" max="100" placeholder="Nhập tuổi của bạn" required>
+
+        <!-- Nhập học phí tối đa -->
+        <label for="tuition">Học phí tối đa (VND):</label>
+        <input type="number" id="tuition" name="tuition" placeholder="Ví dụ: 20000000" required>
+
+        <!-- Lựa chọn khu vực -->
+        <label for="region">Khu vực mong muốn:</label>
+        <select id="region" name="region" required>
+            <option value="Bắc">Miền Bắc</option>
+            <option value="Trung">Miền Trung</option>
+            <option value="Nam">Miền Nam</option>
+        </select>
+
+        <!-- Nút gửi -->
+        <button type="submit">Xem Kết Quả</button>
+    </form>
+</body>
+</html>
